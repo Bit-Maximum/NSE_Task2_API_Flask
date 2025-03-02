@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>API Эндпоинты</title>
+</head>
+<body>
+    <h1>API Эндпоинты</h1>
+
+    <h2>Эндпоинты городов (/api/v1/cities)</h2>
+    <table>
+        <tr>
+            <th>Метод</th>
+            <th>URL</th>
+            <th>Описание</th>
+            <th>Пример</th>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/v1/cities/</td>
+            <td>Получить список всех городов</td>
+            <td><a href="/api/v1/cities/" class="btn">Тест</a></td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/v1/cities/&lt;city_id&gt;</td>
+            <td>Получить информацию о городе по ID</td>
+            <td><a href="/api/v1/cities/1" class="btn">Тест</a></td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/api/v1/cities/</td>
+            <td>Добавить новый город</td>
+            <td>Тело: {"name": "City", "zipcode": 12345}</td>
+        </tr>
+        <tr>
+            <td>PUT</td>
+            <td>/api/v1/cities/&lt;city_id&gt;</td>
+            <td>Обновить данные города</td>
+            <td>Тело: {"name": "Updated City", "zipcode": 54321}</td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td>/api/v1/cities/&lt;city_id&gt;</td>
+            <td>Удалить город</td>
+            <td>-</td>
+        </tr>
+    </table>
+
+    <h2>Эндпоинты товаров (/api/v1/products)</h2>
+    <table>
+        <tr>
+            <th>Метод</th>
+            <th>URL</th>
+            <th>Описание</th>
+            <th>Пример</th>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/v1/products/max</td>
+            <td>Самый дорогой товар</td>
+            <td><a href="/api/v1/products/max" class="btn">Тест</a></td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/v1/products/min</td>
+            <td>Самый дешевый товар</td>
+            <td><a href="/api/v1/products/min" class="btn">Тест</a></td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/v1/products/avg</td>
+            <td>Средняя цена по категориям</td>
+            <td><a href="/api/v1/products/avg" class="btn">Тест</a></td>
+        </tr>
+    </table>
+</body>
+</html>
