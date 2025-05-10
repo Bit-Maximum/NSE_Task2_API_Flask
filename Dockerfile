@@ -3,20 +3,17 @@ LABEL authors="Bit Maximum"
 
 WORKDIR /app
 
-# Установим PoEtry :)
-RUN pip install poetry
+# Установим системные зависимости
+RUN apt-get update && apt-get install -y --no-install-recommends git
 
-# Копируем файлы poetry
-COPY pyproject.toml poetry.lock ./
+COPY requirements.txt ./
 
-# Оключим создание дополнительного виртуального окружения
-RUN poetry config virtualenvs.create false
-
-# Установим зависимости
-RUN poetry install --no-interaction --no-root
+# Установим зависимости Python
+RUN pip install -r requirements.txt
 
 # Скопируем остальное приожение
 COPY . .
 
-# Установим зависимости в режиме разработчика
-RUN poetry install --no-interaction
+EXPOSE 5000
+
+CMD ["python", "./app.py"]

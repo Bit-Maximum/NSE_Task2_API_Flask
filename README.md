@@ -7,7 +7,24 @@
 За основу был взят датасет "Grocery Sales Database":\
 [https://www.kaggle.com/datasets/andrexibiza/grocery-sales-dataset/](https://www.kaggle.com/datasets/andrexibiza/grocery-sales-dataset/)
 
-# Установка
+# Установка (Docker)
+
+Перед началом работы убедитесь, что у вас установлен Docker.
+
+Соберите проект:
+
+```bash
+docker build -t nse-task-2:latest .
+```
+
+Для запуска сервера выполните команду:
+
+```bash
+docker run -p 5000:5000 nse-task-2:latest
+
+```
+
+# Установка (Локально)
 
 Перед началом работы убедитесь, что у вас установлен Python (рекомендуемая версия: 3.8+).
 
@@ -22,8 +39,6 @@ pip install -r requirements.txt
 ```bash
 poetry install
 ```
-
-# Запуск проекта
 
 Для запуска сервера выполните команду:
 

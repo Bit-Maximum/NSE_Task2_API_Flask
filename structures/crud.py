@@ -91,7 +91,7 @@ def get_full_price_stats_per_city():
 def get_full_price_stats_per_employee():
     return (
         db.session.query(
-            func.concat(Employee.first_name, ' ', Employee.last_name).label('employee_name'),
+            Employee.last_name.label('employee_name'),
             func.min(Product.price).label('min_price'),
             func.avg(Product.price).label('avg_price'),
             func.max(Product.price).label('max_price')
